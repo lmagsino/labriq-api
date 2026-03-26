@@ -308,6 +308,14 @@ Devise.setup do |config|
   config.responder.error_status = :unprocessable_content
   config.responder.redirect_status = :see_other
 
+  # API-only: no navigational formats — return 401 instead of redirecting to sign-in
+  config.navigational_formats = []
+
+  # JWT-only auth: don't store the user in the session
+  config.warden do |manager|
+    manager.scope_defaults :user, store: false
+  end
+
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is
