@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :subscription do
-    user { nil }
-    plan { "MyString" }
-    stripe_customer_id { "MyString" }
-    stripe_subscription_id { "MyString" }
-    status { "MyString" }
-    expires_at { "2026-03-25 20:40:13" }
+    user
+    plan { "pro" }
+    stripe_customer_id { "cus_test123" }
+    stripe_subscription_id { "sub_test123" }
+    status { "active" }
+    expires_at { 30.days.from_now }
   end
 end
