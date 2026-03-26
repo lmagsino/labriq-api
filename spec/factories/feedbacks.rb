@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :feedback do
-    scan { nil }
+    scan
     lab_result { nil }
-    feedback_type { "MyString" }
-    comment { "MyText" }
+    feedback_type { "general" }
+    comment { "The analysis was helpful." }
   end
 end
