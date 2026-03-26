@@ -1,5 +1,5 @@
 class PromptTemplate < ApplicationRecord
-  validates :name, :version, :content, :model_name, presence: true
+  validates :name, :version, :content, :ai_model_name, presence: true
 
   scope :active, -> { where(active: true) }
 
