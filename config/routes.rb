@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
+  # Auth — outside namespace so Warden scope stays :user and authenticate_user! works
+  devise_for :users, path: 'api/v1/auth',
+    path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register' },
+    controllers: {
+      sessions: 'api/v1/sessions',
+      registrations: 'api/v1/registrations'
+    }
+
   namespace :api do
     namespace :v1 do
-      # Auth
-      devise_for :users, path: 'auth',
-        path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register' },
-        controllers: {
-          sessions: 'api/v1/sessions',
-          registrations: 'api/v1/registrations'
-        }
-
       # Scans
       resources :scans, only: [:create, :show, :index]
 
