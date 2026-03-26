@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :lab_result do
-    scan { nil }
-    name { "MyString" }
-    value { "MyString" }
-    unit { "MyString" }
-    status { "MyString" }
-    reference_range { "MyString" }
-    explanation { "MyText" }
-    sort_order { 1 }
+    scan
+    name { "Glucose" }
+    value { "95" }
+    unit { "mg/dL" }
+    status { "normal" }
+    reference_range { "70-100" }
+    explanation { "Your glucose level is within normal range." }
+    sort_order { 0 }
   end
 end
