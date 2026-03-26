@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :doctor_question do
-    scan { nil }
-    question { "MyText" }
-    sort_order { 1 }
+    scan
+    question { "Should I be concerned about my glucose level?" }
+    sort_order { 0 }
   end
 end
