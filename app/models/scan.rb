@@ -23,4 +23,12 @@ class Scan < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
   scope :completed, -> { where(status: :completed) }
+
+  before_create :generate_share_token
+
+  private
+
+  def generate_share_token
+    self.share_token = SecureRandom.urlsafe_base64(16)
+  end
 end
