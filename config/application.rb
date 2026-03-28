@@ -44,5 +44,6 @@ module LabriqApi
     # Devise requires session middleware even in JWT/API mode
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+
   end
 end
